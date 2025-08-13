@@ -93,11 +93,13 @@ python run_style_transfer.py \
 - `run_style_transfer.py`: The command-line script for running style transfer.
 - `requirements.txt`: Project dependencies.
 
-##  Acknowledgements
+##  Acknowledgements and Copyright Notice
 
-This work is based on the following pioneering research:
-- **StyleID**: [StyleID: Identity-Disentangled Tuning of T2I-Adapters for Style-Consistent Generation](https://arxiv.org/abs/2404.09468)
-- **Diffusers**: [Hugging Face Diffusers Library](https://github.com/huggingface/diffusers)
+This is an unofficial, community-driven implementation. The conceptual framework and core ideas of StyleID are the intellectual property of the original authors of the paper.
+
+- **Original Paper:** [StyleID: Identity-Disentangled Tuning of T2I-Adapters for Style-Consistent Generation](https://arxiv.org/abs/2404.09468). All credit for the StyleID method goes to the original authors.
+- **This Implementation:** The code in this repository is licensed under the MIT License (see `LICENSE` file). It is provided for academic and research purposes.
+- **Libraries:** This project heavily relies on the excellent [Hugging Face Diffusers Library](https://github.com/huggingface/diffusers).
 
 ## 📄 License 
 
