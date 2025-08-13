@@ -11,12 +11,29 @@ This project wraps the core concepts of StyleID into a `diffusers`-compatible pi
 
 ## ✨ Features
 
+- **Alternative `AttnProcessor` Implementation**: Provides a hook-free alternative to other implementations, offering a more modular and self-contained integration with `diffusers`.
 - **Fully `diffusers` Compatible**: Implemented as a subclass of `StableDiffusionImg2ImgPipeline` for seamless integration with the Hugging Face ecosystem.
 - **Modular Design**: Utilizes a `StyleIDState` processor and a `StyleIDAttnProcessor` for a clean, understandable, and extensible codebase.
 - **Tunable Parameters**: Allows for dynamic adjustment of key parameters like content preservation strength (`gamma`) and attention temperature (`temperature`).
 - **DDIM Inversion**: Implements the DDIM inversion process to accurately extract latent representations of content and style images.
 - **Multi-Model Support**: Compatible with various Stable Diffusion versions, including v1.5, v2.0, and v2.1.
 - **Style Pre-computation**: Features a `precompute_style` method to cache style features, accelerating the process when applying the same style to multiple content images.
+
+## 🔧 Implementation Details: `AttnProcessor` vs. Hooks
+
+There are two primary methods to modify the behavior of a `diffusers` model like the UNet: PyTorch hooks and custom attention processors.
+
+1.  **Hook-Based Method**: This approach attaches a function (a hook) to a specific layer of the model (e.g., `unet.up_blocks[1].attentions[0]`). The hook intercepts the layer's input or output. It's a powerful and general-purpose PyTorch feature.
+
+2.  **`AttnProcessor`-Based Method (This Project)**: This approach involves replacing a layer's attention processor object with a custom class that inherits from `AttnProcessor`. This is the officially recommended method by `diffusers` for modifying attention logic.
+
+**This project uses the `AttnProcessor` method for the following reasons:**
+
+- **Modularity & Stability**: The logic is fully encapsulated within the processor class, making the code cleaner and less dependent on the internal structure of the UNet. This can make the implementation more robust to future updates in the `diffusers` library.
+- **Clarity**: It makes the modification explicit. Instead of having a hidden hook, the `unet.set_attn_processor(...)` call clearly signals that the attention mechanism is being replaced.
+- **Best Practices**: It aligns with the current design philosophy of the `diffusers` library.
+
+By providing this alternative, this repository serves as a useful case study for different engineering approaches to implementing the same research paper.
 
 ## 🎨 Showcase
 
