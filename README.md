@@ -41,10 +41,10 @@ Placing compelling visual examples here is crucial for demonstrating the capabil
 
 | Content | Style | Stylized Output |
 | :---: | :---: | :---: |
-| *Place your content image here* | *Place your style image here* | *Place your generated image here* |
-| `examples/content/1.jpg` | `examples/style/1.png` | `results/1_stylized_1.png` |
-| *Place your content image here* | *Place your style image here* | *Place your generated image here* |
-| `examples/content/2.jpg` | `examples/style/2.png` | `results/2_stylized_2.png` |
+
+| `examples\cnt\3.jpg` | `examples\sty\Sea_Landscape.png` | `examples\3.png` |
+
+| `examples\cnt\2.jpg` | `examples\sty\udnie.png` | `examples\2.png` |
 
 
 ## 🚀 Getting Started
@@ -53,7 +53,7 @@ Placing compelling visual examples here is crucial for demonstrating the capabil
 
 First, clone the repository and navigate to the project directory:
 ```bash
-git clone https://github.com/YOUR_USERNAME/StyleID_diffusers_pipeline.git
+git clone https://github.com/BoostZhu/StyleID-Diffusers.git
 cd StyleID_diffusers_pipeline
 ```
 
@@ -114,7 +114,7 @@ python run_style_transfer.py \
 
 This is an unofficial, community-driven implementation. The conceptual framework and core ideas of StyleID are the intellectual property of the original authors of the paper.
 
-- **Original Paper:** [StyleID: Identity-Disentangled Tuning of T2I-Adapters for Style-Consistent Generation](https://arxiv.org/abs/2404.09468). All credit for the StyleID method goes to the original authors.
+- **Original Paper:** [Style Injection in Diffusion: A Training-free Approach for Adapting Large-scale Diffusion Models for Style Transfer](https://openaccess.thecvf.com/content/CVPR2024/html/Chung_Style_Injection_in_Diffusion_A_Training-free_Approach_for_Adapting_Large-scale_CVPR_2024_paper.html). All credit for the StyleID method goes to the original authors.
 - **This Implementation:** The code in this repository is licensed under the MIT License (see `LICENSE` file). It is provided for academic and research purposes.
 - **Libraries:** This project heavily relies on the excellent [Hugging Face Diffusers Library](https://github.com/huggingface/diffusers).
 
