@@ -5,7 +5,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![Diffusers](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Diffusers-yellow)](https://github.com/huggingface/diffusers)
 
-This repository contains an unofficial PyTorch implementation of the CVPR 2024 paper **"StyleID: Identity-Disentangled Tuning of T2I-Adapters for Style-Consistent Generation"** 
+This repository contains an unofficial PyTorch implementation of the CVPR 2024 paper **"Style Injection in Diffusion: A Training-free Approach for Adapting Large-scale Diffusion Models for Style Transfer"** 
 
 This project wraps the core concepts of StyleID into a `diffusers`-compatible pipeline. It uses a state processor and custom attention modules to precisely control the style and content inversion processes, enabling high-fidelity artistic style transfer.
 
@@ -42,9 +42,9 @@ Placing compelling visual examples here is crucial for demonstrating the capabil
 | Content | Style | Stylized Output |
 | :---: | :---: | :---: |
 
-| `examples\cnt\3.jpg` | `examples\sty\Sea_Landscape.png` | `examples\3.png` |
+| `examples/cnt/3.jpg` | `examples/sty/Sea_Landscape.png` | `examples/3.png` |
 
-| `examples\cnt\2.jpg` | `examples\sty\udnie.png` | `examples\2.png` |
+| `examples/cnt/2.jpg` | `examples/sty/udnie.png` | `examples/2.png` |
 
 
 ## 🚀 Getting Started
@@ -54,7 +54,7 @@ Placing compelling visual examples here is crucial for demonstrating the capabil
 First, clone the repository and navigate to the project directory:
 ```bash
 git clone https://github.com/BoostZhu/StyleID-Diffusers.git
-cd StyleID_diffusers_pipeline
+cd StyleID-Diffusers
 ```
 
 It is recommended to use a virtual environment. Then, install the required dependencies:
