@@ -67,9 +67,4 @@ venv.bak/
 *.sublime-workspace
 
 # Output files
-results/
-output.png
-*.jpg
-*.jpeg
-*.png
-*.gif
+
