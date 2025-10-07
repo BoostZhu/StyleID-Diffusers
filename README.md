@@ -61,31 +61,35 @@ pip install -r requirements.txt
 
 ### 2. Prepare Images
 
-Place your content images in the `examples/content` directory and your style images in the `examples/style` directory.
+Place your content images in the `examples/cnt` directory and your style images in the `examples/sty` directory (matching the provided examples).
 
-### 3. Run Style Transfer
+### 3. Run Style Transfer (Single Image)
 
-Use the `run_style_transfer.py` script to perform style transfer.
+Use the `test_styleid.py` script to perform style transfer on a single pair of images.
 
 **Basic Usage:**
 ```bash
-python run_style_transfer.py \
-  --content "examples/content/your_content_image.jpg" \
-  --style "examples/style/your_style_image.png" \
+python test_styleid.py \
+  --content "examples/cnt/your_content_image.jpg" \
+  --style "examples/sty/your_style_image.png" \
   --output "results/"
 ```
 This will generate an image named `{style_name}_stylized_{content_name}.png` in the `results/` directory.
 
 **Advanced Usage (with custom parameters):**
 ```bash
-python run_style_transfer.py \
-  --content "examples/content/your_content_image.jpg" \
-  --style "examples/style/your_style_image.png" \
+python test_styleid.py \
+  --content "examples/cnt/your_content_image.jpg" \
+  --style "examples/sty/your_style_image.png" \
   --output "results/stylized_image.png" \
   --model "1.5" \
   --steps 50 \
   --gamma 0.8 \
-  --temperature 1.5
+  --temperature 1.5 \
+  --no_adain \
+  --no_attn \
+  --save_intermediates \
+  --intermediates_dir "results"
 ```
 
 ### Command-Line Arguments
@@ -104,14 +108,33 @@ python run_style_transfer.py \
 ## 🔧 Code Structure
 
 - `styleid_pipeline.py`: The core implementation, including `StyleIDPipeline`, `StyleIDState`, and `StyleIDAttnProcessor`.
-- `run_style_transfer.py`: The command-line script for running style transfer.
+- `test_styleid.py`: Single-image CLI for running style transfer.
+- `run_batch_transfer.py`: Batch CLI using precomputed style features for many content images.
 - `requirements.txt`: Project dependencies.
 
-##  Acknowledgements and Copyright Notice
+### 4. Run Batch Style Transfer
+
+When applying one style to many content images, precompute the style once and process a folder using `run_batch_transfer.py`:
+
+```bash
+python run_batch_transfer.py \
+  --style "examples/sty/your_style_image.png" \
+  --content_dir "examples/cnt" \
+  --output_dir "results_batch" \
+  --model "1.5" \
+  --steps 50 \
+  --gamma 0.75 \
+  --temperature 1.5 \
+  --no_adain \
+  --no_attn
+```
+
+##  Acknowledgements and Attribution
 
 This is an unofficial, community-driven implementation. The conceptual framework and core ideas of StyleID are the intellectual property of the original authors of the paper.
 
 - **Original Paper:** [Style Injection in Diffusion: A Training-free Approach for Adapting Large-scale Diffusion Models for Style Transfer](https://openaccess.thecvf.com/content/CVPR2024/html/Chung_Style_Injection_in_Diffusion_A_Training-free_Approach_for_Adapting_Large-scale_CVPR_2024_paper.html). All credit for the StyleID method goes to the original authors.
+- **Upstream Inspiration:** This repository draws inspiration from jiwoogit’s academic implementation of StyleID. Please refer to their work for the original research code and insights.
 - **This Implementation:** The code in this repository is licensed under the MIT License (see `LICENSE` file). It is provided for academic and research purposes.
 - **Libraries:** This project heavily relies on the excellent [Hugging Face Diffusers Library](https://github.com/huggingface/diffusers).
 

@@ -150,7 +150,7 @@ class StyleIDAttnProcessor(AttnProcessor):
                     t in self.state.style_features[layer] and
                     t in self.state.content_features[layer]):
                     
-                    # 获取映射时间步的特征
+                    # Fetch features for the mapped timestep
                     q_c = self.state.content_features[layer][t][0]
                     k_s = self.state.style_features[layer][t][1]
                     v_s = self.state.style_features[layer][t][2]
