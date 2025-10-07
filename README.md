@@ -41,8 +41,8 @@ Placing compelling visual examples here is crucial for demonstrating the capabil
 
 | Content | Style | Stylized Output |
 | :---: | :---: | :---: |
-| ![Content Image 3](examples/cnt/3.jpg) | ![Style Image Sea Landscape](examples/sty/Sea_Landscape.png) | ![Stylized Output 3](examples/3.png) |
-| ![Content Image 2](examples/cnt/2.jpg) | ![Style Image Udnie](examples/sty/udnie.png) | ![Stylized Output 2](examples/2.png) |
+| ![Content Image 3](examples/cnt/3.png) | ![Style Image Sea Landscape](examples/sty/Sea_Landscape.png) | ![Stylized Output 3](examples/3.png) |
+| ![Content Image 2](examples/cnt/2.png) | ![Style Image Udnie](examples/sty/udnie.png) | ![Stylized Output 2](examples/2.png) |
 
 ## 🚀 Getting Started
 
