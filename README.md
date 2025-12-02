@@ -1,5 +1,5 @@
 # StyleID-Diffusers: A Diffusers-based Implementation for StyleID 
-("Style Injection in Diffusion: A Training-free Approach  for Adapting Large-scale Diffusion Models for Style Transfer”)
+
 
 [![Paper](https://img.shields.io/badge/paper-CVPR'24-blue)](https://arxiv.org/abs/2404.09468)
 [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://www.python.org/)
